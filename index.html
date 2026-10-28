@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="description" content="Wine is a dating app for adults who want meaningful connections — intention-first, not swipe-first. Coming soon worldwide. Join the waitlist." />
+    <link rel="icon" href="data:," />
+    <title>Wine — Coming Soon Worldwide · Join the Waitlist</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Great+Vibes&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        color-scheme: dark;
+        --wine: #6d0f27;
+        --wine-bright: #a12444;
+        --wine-deep: #2a0712;
+        --bg: #160509;
+        --surface: #2e0a16;
+        --surface-2: #3a0e1e;
+        --ivory: #f8f1e9;
+        --soft: #e3cdc4;
+        --muted: #c9a89d;
+        --champagne: #eccf96;
+        --line: rgba(236, 207, 150, 0.28);
+        --radius-lg: 32px;
+        --radius-md: 24px;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ivory);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: 17px;
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
+      }
+      img { max-width: 100%; display: block; }
+      a { color: var(--champagne); }
+      :focus-visible { outline: 3px solid var(--champagne); outline-offset: 3px; border-radius: 6px; }
+
+      .wrap { max-width: 680px; margin: 0 auto; padding: 0 22px; }
+
+      /* ---------- Hero ---------- */
+      .hero {
+        position: relative;
+        overflow: hidden;
+        background: var(--wine-deep);
+        isolation: isolate;
+      }
+      .hero-img {
+        position: absolute; inset: 0;
+        width: 100%; height: 100%;
+        object-fit: cover;
+        object-position: center 38%;
+        z-index: -2;
+      }
+      .hero::after {
+        content: "";
+        position: absolute; inset: 0;
+        background: linear-gradient(180deg, rgba(22,5,9,0.55) 0%, rgba(22,5,9,0.35) 45%, rgba(22,5,9,0.88) 100%);
+        z-index: -1;
+      }
+      .hero-inner { padding: 30px 0 56px; }
+      .brand-row {
+        display: flex; align-items: center; justify-content: space-between; gap: 12px;
+        padding-bottom: 20px;
+      }
+      .brand {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 24px; font-weight: 700; letter-spacing: 0.14em;
+        color: var(--ivory);
+      }
+      .age-badge {
+        flex: none;
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.12em;
+        color: var(--champagne);
+        border: 1.5px solid var(--line);
+        border-radius: 999px;
+        padding: 5px 12px;
+      }
+      .hero-status {
+        display: inline-block;
+        font-size: 13px; font-weight: 700; letter-spacing: 0.22em;
+        color: var(--champagne);
+        text-transform: uppercase;
+        margin: 26px 0 18px;
+      }
+      h1 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-weight: 600;
+        font-size: clamp(52px, 14.5vw, 84px);
+        line-height: 1.04;
+        margin: 0 0 6px;
+        letter-spacing: -0.01em;
+      }
+      .hero-question {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(31px, 8.6vw, 46px);
+        font-weight: 500;
+        line-height: 1.15;
+        margin: 0 0 22px;
+        color: var(--ivory);
+      }
+      .hero-question .want {
+        font-family: "Great Vibes", "Playfair Display", cursive;
+        font-size: 1.55em;
+        font-weight: 400;
+        color: var(--champagne);
+        padding: 0 0.06em;
+        vertical-align: -0.08em;
+      }
+      .tagline {
+        font-size: clamp(20px, 5.4vw, 24px);
+        font-weight: 600;
+        line-height: 1.35;
+        margin: 0 0 14px;
+        color: var(--ivory);
+      }
+      .hero-copy { color: var(--soft); margin: 0 0 30px; max-width: 34em; }
+      .hero-copy strong { color: var(--ivory); font-weight: 600; }
+
+      /* ---------- Join button + placeholder note ---------- */
+      .join-btn {
+        display: flex; align-items: center; justify-content: center; gap: 10px;
+        width: 100%;
+        min-height: 62px;
+        padding: 16px 24px;
+        border: none;
+        border-radius: 999px;
+        background: var(--ivory);
+        color: var(--wine);
+        font: inherit;
+        font-size: 18.5px; font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.4);
+        transition: transform 0.18s ease, background 0.18s ease;
+      }
+      .join-btn:hover { background: #fff8ef; }
+      .join-btn:active { transform: scale(0.975); }
+      .join-btn .sub {
+        display: block;
+        font-size: 12.5px; font-weight: 600; letter-spacing: 0.04em;
+        color: #8a4457;
+      }
+      .join-btn .label { display: block; text-align: left; line-height: 1.25; }
+      .join-note {
+        margin-top: 16px;
+        background: var(--surface);
+        border: 1.5px solid var(--line);
+        border-radius: var(--radius-md);
+        padding: 20px 22px;
+        color: var(--soft);
+      }
+      .join-note[hidden] { display: none; }
+      .join-note p { margin: 0; }
+      .join-note strong { color: var(--ivory); }
+      .hero-meta {
+        margin: 22px 0 0;
+        font-size: 14.5px;
+        color: var(--muted);
+        text-align: center;
+      }
+
+      /* ---------- Sections ---------- */
+      section { padding: 58px 0 6px; }
+      .kicker {
+        font-size: 12.5px; font-weight: 700; letter-spacing: 0.24em;
+        text-transform: uppercase; color: var(--champagne);
+        margin: 0 0 12px;
+      }
+      h2 {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(30px, 8vw, 40px);
+        font-weight: 600; line-height: 1.15;
+        margin: 0 0 14px;
+      }
+      .section-lede { color: var(--soft); margin: 0 0 28px; max-width: 36em; }
+
+      .feature-list { display: grid; gap: 14px; margin: 0; padding: 0; list-style: none; }
+      .feature {
+        background: var(--surface);
+        border-radius: var(--radius-md);
+        padding: 22px 24px;
+      }
+      .feature h3 { margin: 0 0 6px; font-size: 18.5px; font-weight: 700; color: var(--ivory); }
+      .feature p { margin: 0; color: var(--soft); font-size: 16px; }
+      .feature .planned {
+        display: inline-block;
+        font-size: 11.5px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+        color: var(--champagne);
+        border: 1px solid var(--line); border-radius: 999px;
+        padding: 3px 10px; margin-bottom: 12px;
+      }
+
+      .steps { display: grid; gap: 0; margin: 0; padding: 0; list-style: none; counter-reset: step; }
+      .steps li {
+        display: flex; gap: 18px;
+        padding: 20px 2px;
+        border-bottom: 1px solid rgba(236,207,150,0.14);
+      }
+      .steps li:last-child { border-bottom: none; }
+      .step-num {
+        flex: none;
+        width: 42px; height: 42px;
+        border-radius: 50%;
+        background: var(--wine);
+        color: var(--ivory);
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 19px; font-weight: 700;
+        display: flex; align-items: center; justify-content: center;
+        margin-top: 2px;
+      }
+      .steps h3 { margin: 0 0 4px; font-size: 17.5px; font-weight: 700; }
+      .steps p { margin: 0; color: var(--soft); font-size: 16px; }
+
+      .privacy {
+        background: var(--surface-2);
+        border-radius: var(--radius-lg);
+        padding: 26px 26px 28px;
+        margin-top: 34px;
+      }
+      .privacy h2 { font-size: 26px; margin-bottom: 10px; }
+      .privacy p { color: var(--soft); margin: 0 0 10px; font-size: 16px; }
+      .privacy p:last-child { margin-bottom: 0; }
+
+      /* ---------- Premium signup form ---------- */
+      .join-form-section { padding-top: 64px; }
+      .join-card {
+        background: linear-gradient(180deg, var(--surface-2), var(--surface));
+        border: 1px solid var(--line);
+        border-radius: var(--radius-lg);
+        padding: 28px 22px 26px;
+        box-shadow: 0 24px 60px rgba(0,0,0,0.35);
+      }
+      .join-card h2 { margin-bottom: 10px; }
+      .join-card .section-lede { margin-bottom: 24px; }
+      .wine-form { display: grid; gap: 20px; }
+      .field { display: grid; gap: 8px; }
+      .field label, .field legend {
+        font-size: 15.5px; font-weight: 700; color: var(--ivory); line-height: 1.35;
+      }
+      .field .optional { font-weight: 500; color: var(--muted); font-size: 13.5px; }
+      .field .req { color: var(--champagne); }
+      .wine-form input[type="email"],
+      .wine-form input[type="text"] {
+        width: 100%; min-height: 58px;
+        padding: 15px 16px;
+        border: 2px solid transparent;
+        border-radius: 16px;
+        background: #fffaf2;
+        color: #2a0712;
+        font: inherit; font-size: 17px;
+      }
+      .wine-form input::placeholder { color: #8a6f68; }
+      .wine-form input:focus { outline: none; border-color: var(--champagne); box-shadow: 0 0 0 3px rgba(236,207,150,0.25); }
+      .wine-form fieldset { border: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+      .radio-list { display: grid; gap: 10px; }
+      .radio-option {
+        display: flex; align-items: center; gap: 12px;
+        background: rgba(248,241,233,0.07);
+        border: 1.5px solid rgba(236,207,150,0.22);
+        border-radius: 16px;
+        padding: 14px 16px;
+        cursor: pointer;
+        font-size: 16.5px; font-weight: 600; color: var(--ivory);
+        min-height: 54px;
+      }
+      .radio-option input { width: 22px; height: 22px; flex: none; accent-color: var(--wine-bright); margin: 0; }
+      .radio-option:has(input:checked) { border-color: var(--champagne); background: rgba(236,207,150,0.12); }
+      .radio-option:has(input:focus-visible) { outline: 3px solid var(--champagne); outline-offset: 2px; }
+      .check-row {
+        display: flex; gap: 13px; align-items: flex-start;
+        background: rgba(248,241,233,0.05);
+        border: 1.5px solid rgba(236,207,150,0.18);
+        border-radius: 16px;
+        padding: 16px;
+        cursor: pointer;
+      }
+      .check-row input { width: 26px; height: 26px; flex: none; margin: 1px 0 0; accent-color: var(--wine-bright); }
+      .check-row span { font-size: 16px; line-height: 1.45; color: var(--soft); font-weight: 600; }
+      .checks { display: grid; gap: 12px; }
+      .form-error {
+        display: none;
+        background: #4a0d1d; border: 1.5px solid #e08aa0; color: #ffe3e9;
+        border-radius: 16px; padding: 15px 17px; font-size: 15.5px; font-weight: 600; line-height: 1.45;
+      }
+      .form-error.show { display: block; }
+      .submit-btn {
+        width: 100%; min-height: 62px;
+        padding: 16px 24px; border: none; border-radius: 999px;
+        background: var(--ivory); color: var(--wine);
+        font: inherit; font-size: 18.5px; font-weight: 700; cursor: pointer;
+        box-shadow: 0 14px 34px rgba(0,0,0,0.35);
+        transition: transform 0.18s ease, background 0.18s ease, opacity 0.18s ease;
+      }
+      .submit-btn:hover { background: #fff8ef; }
+      .submit-btn:active { transform: scale(0.98); }
+      .submit-btn:disabled { opacity: 0.65; cursor: wait; transform: none; }
+      .form-privacy { margin: 18px 0 0; font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+      .form-success {
+        display: none;
+        text-align: center;
+        padding: 26px 10px 10px;
+      }
+      .form-success.show { display: block; }
+      .form-success .success-title {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 30px; font-weight: 600; margin: 0 0 10px; color: var(--ivory);
+      }
+      .form-success p { color: var(--soft); margin: 0 auto; max-width: 30em; font-size: 17px; }
+      .form-success .success-mark {
+        width: 58px; height: 58px; margin: 0 auto 18px;
+        border-radius: 50%; background: var(--wine); border: 1.5px solid var(--line);
+        display: flex; align-items: center; justify-content: center;
+        color: var(--champagne); font-size: 28px; line-height: 1;
+      }
+      @media (min-width: 720px) { .join-card { padding: 36px 34px 32px; } }
+
+      .closing { text-align: center; padding: 64px 0 10px; }
+      .closing .story {
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: clamp(28px, 7.6vw, 38px);
+        font-weight: 500; line-height: 1.25;
+        margin: 0 0 8px;
+      }
+      .closing .story .matters {
+        font-family: "Great Vibes", "Playfair Display", cursive;
+        font-size: 1.5em; color: var(--champagne); font-weight: 400;
+        padding-left: 0.08em; vertical-align: -0.06em;
+      }
+      .closing p { color: var(--soft); margin: 0 auto 28px; max-width: 30em; }
+      .closing .join-note { text-align: left; }
+
+      footer {
+        margin-top: 64px;
+        border-top: 1px solid rgba(236,207,150,0.16);
+        padding: 30px 0 calc(38px + env(safe-area-inset-bottom));
+        color: var(--muted);
+        font-size: 14.5px;
+      }
+      footer p { margin: 0 0 8px; }
+      footer .foot-brand {
+        font-family: "Playfair Display", Georgia, serif;
+        color: var(--ivory); font-size: 18px; letter-spacing: 0.12em;
+        margin-bottom: 12px;
+      }
+
+      @media (min-width: 720px) {
+        .feature-list { grid-template-columns: 1fr 1fr; }
+        .hero-inner { padding-top: 44px; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        html { scroll-behavior: auto; }
+        *, *::before, *::after { transition: none !important; animation: none !important; }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ============ HERO ============ -->
+    <header class="hero">
+      <img class="hero-img" src="assets/teaser.webp" alt="" width="1920" height="1280" />
+      <div class="wrap hero-inner">
+        <div class="brand-row">
+          <span class="brand">WINE</span>
+          <span class="age-badge">ADULTS 18+</span>
+        </div>
+
+        <p class="hero-status">Coming soon · Worldwide</p>
+        <h1>Wine.</h1>
+        <p class="hero-question">What do you <span class="want">want?</span></p>
+
+        <p class="tagline">Find someone who wants what you want.</p>
+        <p class="hero-copy">
+          Wine is a dating app being built for adults around the world who want <strong>meaningful
+          connections</strong> — people who would rather get to know someone properly
+          than swipe through strangers. <strong>Intention first, not swipe first.</strong>
+          Get to know them meaningfully. Give the connection room to grow.
+        </p>
+
+        <a class="join-btn" href="#join-form">
+          <span class="label">Join the waitlist<span class="sub">Takes under a minute, on this page</span></span>
+          <span aria-hidden="true">→</span>
+        </a>
+
+        <p class="hero-meta">Adults 18+ only · Coming soon worldwide · No launch date announced yet</p>
+      </div>
+    </header>
+
+    <main class="wrap">
+      <!-- ============ WHAT WINE WILL BE ============ -->
+      <section aria-labelledby="what-heading">
+        <p class="kicker">What Wine will be</p>
+        <h2 id="what-heading">Built around intention, not volume</h2>
+        <p class="section-lede">
+          Wine is still being built, and it is not live yet. Everything below is
+          <strong>planned for launch</strong> — described honestly, so you know exactly
+          what you would be joining the waitlist for.
+        </p>
+
+        <ul class="feature-list">
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>Intention-first matching</h3>
+            <p>You say what you are actually looking for, and Wine shows you people who
+            want the same thing — a real relationship, something meaningful, or clarity
+            before labels. No endless swiping, no popularity scores.</p>
+          </li>
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>Prompt React</h3>
+            <p>Instead of a generic tap, you react to a specific prompt on someone's
+            profile with a short, real note. If they accept, that note becomes your
+            first message — so every match starts with something worth saying.</p>
+          </li>
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>Wingman</h3>
+            <p>A thoughtful second pair of eyes on your connections. Wingman reads only
+            aggregate signals, never decides for you, and never gives anyone a score —
+            it offers a plain-language observation and one suggested next step.</p>
+          </li>
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>Photo Verified, honestly defined</h3>
+            <p>A Photo Verified badge will mean one thing only: the person's selfie was
+            matched to their profile photos. Nothing more is claimed, and nothing more
+            should be read into it.</p>
+          </li>
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>Safety is never paywalled</h3>
+            <p>Blocking, reporting, date-planning with a trusted contact, and SOS help
+            will be free for everyone, always. Feeling safe on a date is not a premium
+            feature.</p>
+          </li>
+          <li class="feature">
+            <span class="planned">Planned</span>
+            <h3>No payments or gifts in the app</h3>
+            <p>Wine will not sell gifts, boosts, or paid attention. Nobody can pay to
+            reach you, and nobody can pay to be seen by you.</p>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ WHAT HAPPENS NEXT ============ -->
+      <section aria-labelledby="next-heading">
+        <p class="kicker">The waitlist</p>
+        <h2 id="next-heading">What happens next?</h2>
+        <ol class="steps">
+          <li>
+            <span class="step-num" aria-hidden="true">1</span>
+            <div>
+              <h3>You join via the form</h3>
+              <p>Joining takes under a minute — your email and where you are in the
+              world, nothing more.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">2</span>
+            <div>
+              <h3>Wine emails you — only about Wine</h3>
+              <p>With your consent, you hear from Wine only about its launch and beta.
+              No partner offers, no unrelated mail.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">3</span>
+            <div>
+              <h3>Beta invites go out in batches</h3>
+              <p>Invites will roll out in small batches globally, so early members —
+              including our early community in India — get a considered experience
+              rather than a crowded launch.</p>
+            </div>
+          </li>
+          <li>
+            <span class="step-num" aria-hidden="true">4</span>
+            <div>
+              <h3>No spam, ever</h3>
+              <p>Every email carries an unsubscribe link, and unsubscribing takes one
+              tap. If you leave the list, Wine stops writing.</p>
+            </div>
+          </li>
+        </ol>
+
+        <div class="privacy">
+          <h2>A short privacy note</h2>
+          <p>Your email is collected only to inform you about Wine's launch and beta.
+          It is <strong>not sold</strong>, and it is
+          <strong>not used for advertising</strong>.</p>
+          <p>Nothing is collected unless you complete and submit the waitlist form below.</p>
+        </div>
+      </section>
+
+      <!-- ============ JOIN FORM ============ -->
+      <section class="join-form-section" id="join-form" aria-labelledby="join-heading">
+        <div class="join-card">
+          <p class="kicker">Join the waitlist</p>
+          <h2 id="join-heading">Begin your story</h2>
+          <p class="section-lede">Join the waitlist for Wine, a dating app for adults 18+ only. Coming soon worldwide. Wine is not live yet and there is nothing to download today.</p>
+
+          <div class="form-success" id="form-success" role="status" aria-live="polite">
+            <div class="success-mark" aria-hidden="true">✓</div>
+            <p class="success-title">You're in.</p>
+            <p>You're on the list — Wine will email you when it opens. Follow @wineyourstory for updates.</p>
+          </div>
+
+          <form class="wine-form" id="wine-form" novalidate>
+            <div class="field">
+              <label for="f-email">Email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="f-email" name="email" autocomplete="email" inputmode="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="field">
+              <label for="f-name">Name <span class="optional">(optional)</span></label>
+              <input type="text" id="f-name" name="name" autocomplete="name" placeholder="Your name" />
+            </div>
+
+            <div class="field">
+              <label for="f-city">City + Country <span class="optional">(optional)</span></label>
+              <input type="text" id="f-city" name="cityCountry" autocomplete="address-level2" placeholder="City, Country" />
+            </div>
+
+            <div class="checks">
+              <label class="check-row">
+                <input type="checkbox" id="f-age" name="age18" />
+                <span>I am 18 or older</span>
+              </label>
+              <label class="check-row">
+                <input type="checkbox" id="f-consent" name="consent" />
+                <span>I agree to receive emails only about Wine's launch/beta</span>
+              </label>
+            </div>
+
+            <fieldset class="field">
+              <legend>What are you looking for? <span class="optional">(optional)</span></legend>
+              <div class="radio-list">
+                <label class="radio-option"><input type="radio" name="lookingFor" value="Committed relationship" /> Committed relationship</label>
+                <label class="radio-option"><input type="radio" name="lookingFor" value="Dating with possibility" /> Dating with possibility</label>
+                <label class="radio-option"><input type="radio" name="lookingFor" value="Companionship" /> Companionship</label>
+                <label class="radio-option"><input type="radio" name="lookingFor" value="Still figuring it out" /> Still figuring it out</label>
+              </div>
+            </fieldset>
+
+            <div class="form-error" id="form-error" role="alert"></div>
+
+            <button type="submit" class="submit-btn" id="submit-btn">Join the waitlist</button>
+          </form>
+
+          <p class="form-privacy" id="form-privacy-note">Email is collected only to inform you about Wine's launch/beta, not sold or used for ads. Wine is not live yet and there is nothing to download today.</p>
+        </div>
+      </section>
+
+      <!-- ============ CLOSING CTA ============ -->
+      <section class="closing" aria-labelledby="closing-heading">
+        <p class="story" id="closing-heading">Your story <span class="matters">matters.</span></p>
+        <p>Wine is coming soon, globally, for adults who know what they want —
+        wherever you are in the world.
+        Join the waitlist and be among the first to hear when it opens.</p>
+
+        <a class="join-btn" href="#join-form">
+          <span class="label">Join the waitlist<span class="sub">Takes under a minute, on this page</span></span>
+          <span aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <p class="foot-brand">WINE</p>
+        <p>Wine is not live yet. Coming soon worldwide. No launch date has been announced.</p>
+        <p>Adults 18+ only. Wine is intended solely for adults seeking connections with other adults.</p>
+        <p>Follow along on Instagram: <strong>@wineyourstory</strong>.</p>
+        <p>Find someone who wants what you want.</p>
+      </div>
+    </footer>
+
+    <script>
+      (function () {
+        var ENDPOINT = "https://script.google.com/macros/s/AKfycbzS8J0WfK5p4YNCFMlq_q4dID8hmmxC3HN1eMTByHsny3mSQwuH8OpOXHBr_fPEkXyYiQ/exec";
+        var form = document.getElementById("wine-form");
+        var errorBox = document.getElementById("form-error");
+        var successBox = document.getElementById("form-success");
+        var submitBtn = document.getElementById("submit-btn");
+        var privacyNote = document.getElementById("form-privacy-note");
+        var originalBtnText = submitBtn.textContent;
+
+        function showError(msg) {
+          errorBox.textContent = msg;
+          errorBox.classList.add("show");
+          errorBox.scrollIntoView({ block: "nearest", behavior: "smooth" });
+        }
+        function clearError() {
+          errorBox.textContent = "";
+          errorBox.classList.remove("show");
+        }
+
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          clearError();
+
+          var email = document.getElementById("f-email").value.trim();
+          var name = document.getElementById("f-name").value.trim();
+          var cityCountry = document.getElementById("f-city").value.trim();
+          var ageChecked = document.getElementById("f-age").checked;
+          var consentChecked = document.getElementById("f-consent").checked;
+          var lookingFor = "";
+          var radios = form.querySelectorAll('input[name="lookingFor"]');
+          for (var i = 0; i < radios.length; i++) {
+            if (radios[i].checked) { lookingFor = radios[i].value; break; }
+          }
+
+          if (!email) {
+            showError("Please enter your email address.");
+            document.getElementById("f-email").focus();
+            return;
+          }
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+            showError("Please enter a valid email address.");
+            document.getElementById("f-email").focus();
+            return;
+          }
+          if (!ageChecked && !consentChecked) {
+            showError("Please confirm that you are 18 or older and agree to receive emails only about Wine's launch/beta.");
+            return;
+          }
+          if (!ageChecked) {
+            showError("Please confirm that you are 18 or older — Wine is for adults only.");
+            document.getElementById("f-age").focus();
+            return;
+          }
+          if (!consentChecked) {
+            showError("Please agree to receive emails only about Wine's launch/beta so we can let you know when Wine opens.");
+            document.getElementById("f-consent").focus();
+            return;
+          }
+
+          var params = new URLSearchParams();
+          params.append("email", email);
+          params.append("name", name);
+          params.append("cityCountry", cityCountry);
+          if (ageChecked) params.append("age18", "yes");
+          if (consentChecked) params.append("consent", "yes");
+          params.append("lookingFor", lookingFor);
+
+          submitBtn.disabled = true;
+          submitBtn.textContent = "Joining\u2026";
+
+          fetch(ENDPOINT, {
+            method: "POST",
+            headers: { "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8" },
+            body: params.toString()
+          })
+            .then(function (res) {
+              return res.text().then(function (text) {
+                var data = null;
+                try { data = JSON.parse(text); } catch (err) { data = null; }
+                return { ok: res.ok, data: data, text: text };
+              });
+            })
+            .then(function (result) {
+              if (result.data && result.data.result === "success") {
+                form.style.display = "none";
+                if (privacyNote) privacyNote.style.display = "none";
+                successBox.classList.add("show");
+                successBox.scrollIntoView({ block: "center", behavior: "smooth" });
+              } else {
+                var msg = (result.data && (result.data.message || result.data.error)) || "Something went wrong — please check your details and try again.";
+                showError(msg);
+                submitBtn.disabled = false;
+                submitBtn.textContent = originalBtnText;
+              }
+            })
+            .catch(function () {
+              showError("We couldn't submit your signup — please check your connection and try again. Your details are still here.");
+              submitBtn.disabled = false;
+              submitBtn.textContent = originalBtnText;
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
